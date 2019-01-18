@@ -32,40 +32,14 @@
 	</style>
 	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script>
-function autoPlayAudio() {
-        wx.config({
-            // 配置信息, 即使不正确也能使用 wx.ready
-            debug: false,
-            appId: 'wx08d0a3174833c915',
-            timestamp: 1,
-            nonceStr: '',
-            signature: '',
-            jsApiList: []
-        });
-	
-	
-		wx.onMenuShareTimeline({
-    title: '小冰菠菜1111', // 分享标题
-    link: 'http://cokee.sinaapp.com/www3', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-    imgUrl: 'http://cokee.sinaapp.com/www3/300300.png', // 分享图标
-    success: function () { 
-          alert("success");
-    },
-    cancel: function () { 
-          alert("errorMSG:");
-    }
-});
-	
-	
-        wx.ready(function() {
-            var globalAudio=document.getElementById("music");
-            globalAudio.play();
-        });
-};
-// 解决ios音乐不自动播放的问题
-autoPlayAudio();
-		
-	
+function audioAutoPlay(id){
+    var audio = document.getElementById(id);
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+    }, false);
+}
+audioAutoPlay('musicid');
 </script>
 	
 
@@ -102,7 +76,7 @@ autoPlayAudio();
 	
 <div class="sharedark" onclick="sharenone();"><img style="margin-right: 20px;" src="browser_open_img.png" width="50%"></div>
 
-<audio  id="music"  autoplay controls>
+<audio  id="musicid"  autoplay controls>
 	<source src="./邵星舒--时间煮雨.mp3" type="audio/mpeg" >
 </audio>
 
