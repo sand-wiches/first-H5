@@ -74,7 +74,7 @@
 	<source src="./邵星舒--时间煮雨.mp3" type="audio/mpeg" >
 </audio>
 <script>
-function audioAutoPlay(id){
+/*function audioAutoPlay(id){
     var audio = document.getElementById(id),
         play = function(){
         audio.play();
@@ -89,7 +89,15 @@ function audioAutoPlay(id){
         }, false);
     document.addEventListener("touchstart",play, false);
 }
-audioAutoPlay('musicid');	
+audioAutoPlay('musicid');*/
+function audioAutoPlay(id){
+    var audio = document.getElementById(id);
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+    }, false);
+}
+audioAutoPlay('musicid');
 	
 </script>
 
