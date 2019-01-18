@@ -75,7 +75,7 @@
 <!--解决IOS无法自动播放背景音乐，放/body前是，无需担心因页面未完成加载，造成DOM节点获取不到，使脚本报错的问题-->
 <script type="text/javascript">
    //window.onload让页面加载完在播放背景音乐
-	window.onload=function audioAutoPlay(id){
+	function audioAutoPlay(id){
 			var audio = document.getElementById(id);
 			audio.play();
 			document.addEventListener("WeixinJSBridgeReady", function () {
