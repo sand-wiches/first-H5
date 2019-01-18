@@ -37,7 +37,7 @@
 <script>
 function audioAutoPlay(){
     var audio = document.getElementsByTagName("audio");
-    audio.play();
+    audio[0].play();
     document.addEventListener("WeixinJSBridgeReady", function () {
             audio.play();
     }, false);
