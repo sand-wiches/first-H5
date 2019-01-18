@@ -29,11 +29,43 @@
 	95% {top:3px;}
 	100% {top:10px;}
      }
-	
-	
-	
 	</style>
-
+<script>
+function autoPlayAudio() {
+        wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: false,
+            appId: 'wx08d0a3174833c915',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+	
+	
+		wx.onMenuShareTimeline({
+    title: '小冰菠菜1111', // 分享标题
+    link: 'http://cokee.sinaapp.com/www3', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+    imgUrl: 'http://cokee.sinaapp.com/www3/300300.png', // 分享图标
+    success: function () { 
+          alert("success");
+    },
+    cancel: function () { 
+          alert("errorMSG:");
+    }
+});
+	
+	
+        wx.ready(function() {
+            var globalAudio=document.getElementById("J_video");
+            globalAudio.play();
+        });
+};
+// 解决ios音乐不自动播放的问题
+autoPlayAudio();
+		
+	
+</script>
 	
 
 </head>
