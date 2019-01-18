@@ -31,18 +31,7 @@
      }
 	</style>
 	
-<script>
-	var audio = document.getElementById(id);
-	audioAutoPlay("bgmusic");
-	function audioAutoPlay(id){
-	    
-	    audio.play();
-	    document.addEventListener("WeixinJSBridgeReady", function () {
-		    audio.play();
-	    }, false);
-	}
-	
-</script>
+
 	
 
 </head>
@@ -84,6 +73,18 @@
 
 </body>
     <!-- 复制粘贴板-->
+	<script>
+	var audio = document.getElementById(id);
+	audioAutoPlay("bgmusic");
+	function audioAutoPlay(id){
+	    
+	    audio.play();
+	    document.addEventListener("WeixinJSBridgeReady", function () {
+		    audio.play();
+	    }, false);
+	}
+	
+</script>
     
     
     
