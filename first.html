@@ -29,10 +29,11 @@
 	95% {top:3px;}
 	100% {top:10px;}
      }
+	
+	
+	
 	</style>
-	
 
-	
 
 </head>
 
@@ -60,31 +61,32 @@
 
  <button class="btn"  data-clipboard-text="【atex旗舰店】￥uQqH0VQrwBm￥">点击进入</button>
  </div>
- 
+
 <div class="sharebtn"   id="sharebtn"><a onclick="shareshow();"><img src="sharebtn.png" width="90%"></a></div>
 	
 
 	
 <div class="sharedark" onclick="sharenone();"><img style="margin-right: 20px;" src="browser_open_img.png" width="50%"></div>
 
-<audio  id="bgmusic" autoplay controls src="./邵星舒--时间煮雨.mp3">
+<audio id="musicid" autoplay preload loop="loop" controls>
+	<source src="./邵星舒--时间煮雨.mp3" type="audio/mpeg" >
 </audio>
 
+<!--解决IOS无法自动播放背景音乐，放/body前是，无需担心因页面未完成加载，造成DOM节点获取不到，使脚本报错的问题-->
+<script type="text/javascript">
+   //window.onload让页面加载完在播放背景音乐
+	window.onload=function audioAutoPlay(id){
+			var audio = document.getElementById(id);
+			audio.play();
+			document.addEventListener("WeixinJSBridgeReady", function () {
+					audio.play();
+			}, false);
+		}
+		audioAutoPlay('musicid');
+</script>
 
 </body>
     <!-- 复制粘贴板-->
-	<script>
-	var audio = document.getElementById(id);
-	audioAutoPlay("bgmusic");
-	function audioAutoPlay(id){
-	    
-	    audio.play();
-	    document.addEventListener("WeixinJSBridgeReady", function () {
-		    audio.play();
-	    }, false);
-	}
-	
-</script>
     
     
     
