@@ -34,17 +34,7 @@
 	
 	</style>
 
-<script>
-function audioAutoPlay(id){
-    var audio = document.getElementById(id);
-    audio.play();
-    document.addEventListener("WeixinJSBridgeReady", function () {
-            audio.play();
-    }, false);
-}
-audioAutoPlay('musicid');	
-	
-</script>
+
 	
 
 
@@ -84,7 +74,17 @@ audioAutoPlay('musicid');
 <audio id='musicid' autoplay controls>
 	<source src="./邵星舒--时间煮雨.mp3" type="audio/mpeg" >
 </audio>
-
+<script>
+function audioAutoPlay(id){
+    var audio = document.getElementById(id);
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+    }, false);
+}
+audioAutoPlay('musicid');	
+	
+</script>
 
 </body>
     <!-- 复制粘贴板-->
