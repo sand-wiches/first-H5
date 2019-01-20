@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>小冰菠菜-内部购物清单</title>
+  <meta charset="utf-8">
+<link rel="icon" href="./favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+
+<meta name="description" content="小冰菠菜-内部购物清单">
+<meta name="keywords" content="欢迎页,天猫">
+<meta name="applicable-device" content="mobile">
+<script type="text/javascript" src="clipboard.js"></script>
+<style>
+	body {margin: 0;padding: 0;boder:0;}
+	.sharebtn{position:fixed;top: 10px;right: 10px;width:40px;}
+	.sharedark{position: fixed;top: 0;left: 0; width:100%;height: 100%;background-color:rgba(0,0,0,0.5);z-index:99;display:none;text-align: right;padding:20px 0 0 0;}
+	.bottom{position: fixed;bottom: 0;left: 0;width: 100%;background-color: #fff;height: 50px;overflow: hidden;display:none;z-index:13;}
+	.btn{display: block;padding:0 18px;border:0;border-radius: 99px;font-size: 14px;height:30px;background: #f11932;color: #fff;position:absolute;right:10px;top:10px;animation: mymove 2s infinite;}
+	#H_video{position: fixed;top: 0;left: 0; width:100%;height: 100%;z-index:999999;display:block;text-align: center;background-color: #f6ac57;}
+
+	audio {
+		display:none;
+	}
+
+	
+	@keyframes mymove
+    {
+    0% {top:10px;}
+    80% {top:10px;}
+	85% {top:3px;}
+	90% {top:10px;}
+	95% {top:3px;}
+	100% {top:10px;}
+     }
+	
+	
+	
+	</style>
+
+
+</head>
+
+<body >
+
+<div class="main" style="text-align: center;">
+	<img src="images/h5price_01.jpg" style="width:100%;display:block;">
+    <img src="images/h5price_02.jpg" style="width:100%;display:block;">
+    <img src="images/h5price_03.jpg" style="width:100%;display:block;">
+	<img src="images/h5price_04.jpg" style="width:100%;display:block;">
+	<img src="images/h5price_05.jpg" style="width:100%;display:block;">
+	<div style="width:100%;text-align: center;overflow:hidden;">
+	<img id="com1" src="36030f/rou_00000.png" style="width:100%;display: block;position:absolute; top: auto; margin-top: 25%; z-index:9;">
+	<img id="leftright" src="leftright.png" style="width:40%;display: block;position:absolute; top: auto; margin-top: 25%; z-index:10;transition: 3s;">
+    <img src="images/h5price_06.jpg" style="width:100%;display:block;">
+	</div>
+	
+	<img src="images/h5price_07.jpg" style="width:100%;display:block;">
+
+	<div class="biaochi"><img src="images/h5price_08.jpg" width="100%display:block;"></div>
+</div>
+
+<div class="bottom">
+<img id="dianpulogo" src="dianpulogo.png" height="300" style="transition: 0.2s;">
+
+ <button class="btn"  data-clipboard-text="【atex旗舰店】￥uQqH0VQrwBm￥">点击进入</button>
+ </div>
+
+<div class="sharebtn"   id="sharebtn"><a onclick="shareshow();"><img src="sharebtn.png" width="90%"></a></div>
+	
+
+	
+<div class="sharedark" onclick="sharenone();"><img style="margin-right: 20px;" src="browser_open_img.png" width="50%"></div>
+
+<audio id="musicid" autoplay preload loop="loop" controls><!--controls隐藏播放控件-->
+	<source src="./邵星舒--时间煮雨.mp3" type="audio/mpeg" >
+</audio>
+
+<!--解决IOS无法自动播放背景音乐，放</body>前是，为了无需担心因页面未完成加载，造成DOM节点获取不到，使脚本报错的问题-->
+<script type="text/javascript">
+   //window.onload让页面加载完在播放背景音乐
+	function audioAutoPlay(id){
+    var audio = document.getElementById(id);
+        play = function(){
+        audio.play();
+        document.removeEventListener("touchstart",play, false);
+    };
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {//微信
+       play();
+    }, false);
+    document.addEventListener("YixinJSBridgeReady", function() {//易信
+              play();
+        }, false);
+    document.addEventListener("touchstart",play, false);
+}
+audioAutoPlay('musicid');
+</script>
+
+</body>
+    <!-- 复制粘贴板-->
+    
+    
+    
+    <!-- 触发播放-->
+
+<script>
+	function shareshow(){
+	document.getElementsByClassName("sharebtn")[0].style.display="none";
+		document.getElementsByClassName("sharedark")[0].style.display="block";
+			
+	}
+  function sharenone(){
+	 document.getElementsByClassName("sharebtn")[0].style.display="block";
+	  document.getElementsByClassName("sharedark")[0].style.display="none";
+  }
+	</script>
+
+
+<script>
+
+window.movedx=1000000000;
+
+function handleTouchEvent(event) {
+  
+	
+    if (event.touches.length != null) {
+     
+        switch (event.type) {
+            case "touchstart":
+           
+				window.rotx =0;
+				
+				chrotx = event.touches[0].clientX;
+				
+                break;
+            case "touchend":
+			
+          
+				
+				movedx= movedx + rotx;
+				
+				console.log(rotx);
+				console.log(movedx);
+              break;
+            case "touchmove":
+               
+        
+				window.rotx = Math.round(event.changedTouches[0].clientX-chrotx)/12;
+				
+		console.log(window.rotx);
+				
+					
+					var doubule=('000000000'+Math.abs(parseInt(rotx+movedx)%30)).slice(-2);
+								document.getElementById("com1").src = "36030f/rou_000"+  (('000000000'+Math.abs(parseInt(rotx+movedx)%30)).slice(-2)) + ".png";
+								console.log(doubule);
+
+				
+			
+        }
+    }
+}
+document.addEventListener("touchstart", handleTouchEvent, false);
+document.addEventListener("touchend", handleTouchEvent, false);
+document.addEventListener("touchmove", handleTouchEvent, false);
+	
+	////////////////////////////////////////
+
+	</script>
+
+		
+
+
+
+</html>
